@@ -300,16 +300,16 @@ public class GameController : MonoBehaviour
             GameEvents.FireTriadMatched(match.Positions, match.ChordName);
         }
         
+        // Update combo
+        combo++;
+        lastMatchTime = Time.time;
+        GameEvents.FireComboChanged(combo, GetComboMultiplier());
+
         // Calculate score
         int baseScore = gameConfig.basePointsPerTriad * matches.Count;
         int bonusScore = matchedRequestedChord ? gameConfig.requestedChordBonus : 0;
         int multiplier = GetComboMultiplier();
         int totalScore = (baseScore + bonusScore) * multiplier;
-        
-        // Update combo
-        combo++;
-        lastMatchTime = Time.time;
-        GameEvents.FireComboChanged(combo, GetComboMultiplier());
         
         // Update score
         score += totalScore;

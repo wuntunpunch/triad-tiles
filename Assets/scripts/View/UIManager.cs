@@ -158,10 +158,6 @@ public class UIManager : MonoBehaviour
                 comboText.gameObject.SetActive(true);
                 comboText.text = $"x{multiplier}";
             }
-            else
-            {
-                comboText.gameObject.SetActive(false);
-            }
         }
     }
     
@@ -178,9 +174,6 @@ public class UIManager : MonoBehaviour
         // Reset UI
         UpdateScore(0);
         UpdateCombo(0, 1);
-        
-        if (comboText != null)
-            comboText.gameObject.SetActive(false);
     }
     
     private void HandleGameOver(int finalScore)
