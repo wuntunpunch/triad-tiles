@@ -57,6 +57,9 @@ public class TriadMatcher
     
     /// <summary>
     /// Finds all triad matches on the board.
+    /// Checks both:
+    /// 1. Merged tiles containing 3 notes that form a valid chord
+    /// 2. Three adjacent single-note tiles in a line forming a valid chord
     /// Returns list of matches (each match is list of positions + chord name).
     /// </summary>
     public List<TriadMatch> FindMatches(BoardModel board)
@@ -64,7 +67,25 @@ public class TriadMatcher
         var matches = new List<TriadMatch>();
         int size = board.GridSize;
         
-        // Check horizontal
+        // Check for merged tiles that form complete triads
+        for (int row = 0; row < size; row++)
+        {
+            for (int col = 0; col < size; col++)
+            {
+                var tile = board.GetTile(row, col);
+                if (tile != null && tile.notes.Count == 3)
+                {
+                    string chordName = CheckForChord(tile.notes);
+                    if (chordName != null)
+                    {
+                        var positions = new List<Vector2Int> { new Vector2Int(row, col) };
+                        matches.Add(new TriadMatch(positions, chordName, tile.notes));
+                    }
+                }
+            }
+        }
+        
+        // Check horizontal lines of 3 single-note tiles
         for (int row = 0; row < size; row++)
         {
             for (int col = 0; col <= size - 3; col++)
@@ -74,7 +95,7 @@ public class TriadMatcher
             }
         }
         
-        // Check vertical
+        // Check vertical lines of 3 single-note tiles
         for (int col = 0; col < size; col++)
         {
             for (int row = 0; row <= size - 3; row++)
@@ -150,5 +171,5 @@ public class TriadMatch
         Notes = notes;
     }
     
-    public Vector2Int CenterPosition => Positions[1]; // Middle tile
+    public Vector2Int CenterPosition => Positions.Count > 1 ? Positions[1] : Positions[0];
 }
