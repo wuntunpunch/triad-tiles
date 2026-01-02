@@ -112,6 +112,7 @@ public class GameController : MonoBehaviour
         
         // Initialize view
         boardView.Initialize(gameConfig, noteColors);
+        boardView.ClearBoard();
         
         // Reset state
         score = 0;
@@ -126,6 +127,9 @@ public class GameController : MonoBehaviour
         
         // Request a chord
         RequestNewChord();
+
+        // Show game panel BEFORE spawning (ensures BoardView is subscribed)
+        GameEvents.FirePanelRequested("Game");
         
         // Spawn initial tiles
         for (int i = 0; i < gameConfig.initialTileCount; i++)
@@ -161,6 +165,7 @@ public class GameController : MonoBehaviour
     private void SpawnRandomTile()
     {
         List<Vector2Int> emptyCells = board.GetEmptyCells();
+        Debug.Log($"SpawnRandomTile: {emptyCells.Count} empty cells");
         
         if (emptyCells.Count == 0)
         {
@@ -170,6 +175,7 @@ public class GameController : MonoBehaviour
         
         Vector2Int pos = emptyCells[Random.Range(0, emptyCells.Count)];
         string note = GetRandomNote();
+        Debug.Log($"Spawning tile '{note}' at {pos}");
         
         TileData data = new TileData(note, pos.x, pos.y);
         board.PlaceTile(data);
