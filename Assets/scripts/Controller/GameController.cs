@@ -112,6 +112,7 @@ public class GameController : MonoBehaviour
         
         // Initialize view
         boardView.Initialize(gameConfig, noteColors);
+        boardView.ClearBoard();
         
         // Reset state
         score = 0;
@@ -126,6 +127,9 @@ public class GameController : MonoBehaviour
         
         // Request a chord
         RequestNewChord();
+
+        // Show game panel BEFORE spawning (ensures BoardView is subscribed)
+        GameEvents.FirePanelRequested("Game");
         
         // Spawn initial tiles
         for (int i = 0; i < gameConfig.initialTileCount; i++)
@@ -161,6 +165,7 @@ public class GameController : MonoBehaviour
     private void SpawnRandomTile()
     {
         List<Vector2Int> emptyCells = board.GetEmptyCells();
+        Debug.Log($"SpawnRandomTile: {emptyCells.Count} empty cells");
         
         if (emptyCells.Count == 0)
         {
@@ -170,6 +175,7 @@ public class GameController : MonoBehaviour
         
         Vector2Int pos = emptyCells[Random.Range(0, emptyCells.Count)];
         string note = GetRandomNote();
+        Debug.Log($"Spawning tile '{note}' at {pos}");
         
         TileData data = new TileData(note, pos.x, pos.y);
         board.PlaceTile(data);
@@ -221,6 +227,14 @@ public class GameController : MonoBehaviour
             if (merged != null)
             {
                 GameEvents.FireTilesMerged(fromPos, toPos, merged);
+                
+                // If 3 notes but not a valid chord, destroy it (no points)
+                if (merged.IsComplete && matcher.CheckForChord(merged.notes) == null)
+                {
+                    board.RemoveTile(toPos);
+                    GameEvents.FireTileDestroyed(toPos);
+                    return;
+                }
                 
                 // Check for triads after merge
                 StartCoroutine(CheckForTriadsDelayed());
@@ -286,16 +300,16 @@ public class GameController : MonoBehaviour
             GameEvents.FireTriadMatched(match.Positions, match.ChordName);
         }
         
+        // Update combo
+        combo++;
+        lastMatchTime = Time.time;
+        GameEvents.FireComboChanged(combo, GetComboMultiplier());
+
         // Calculate score
         int baseScore = gameConfig.basePointsPerTriad * matches.Count;
         int bonusScore = matchedRequestedChord ? gameConfig.requestedChordBonus : 0;
         int multiplier = GetComboMultiplier();
         int totalScore = (baseScore + bonusScore) * multiplier;
-        
-        // Update combo
-        combo++;
-        lastMatchTime = Time.time;
-        GameEvents.FireComboChanged(combo, GetComboMultiplier());
         
         // Update score
         score += totalScore;

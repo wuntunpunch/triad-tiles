@@ -113,12 +113,17 @@ public class BoardView : MonoBehaviour
     
     private void HandleGameStart()
     {
-        ClearAllTiles();
         CalculateDimensions();
+    }
+
+    public void ClearBoard()
+    {
+        ClearAllTiles();
     }
     
     private void HandleTileSpawned(Vector2Int pos, TileData data)
     {
+        Debug.Log($"HandleTileSpawned: pos={pos}, cellSize={cellSize}");
         CreateTileView(pos, data, true);
     }
     

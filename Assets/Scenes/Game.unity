@@ -1427,7 +1427,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DifficultyButton
   difficultyIndex: 0
-  buttonText: {fileID: 0}
+  buttonText: {fileID: 1309999501}
 --- !u!1 &1044603639
 GameObject:
   m_ObjectHideFlags: 0
@@ -2542,7 +2542,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DifficultyButton
   difficultyIndex: 1
-  buttonText: {fileID: 0}
+  buttonText: {fileID: 647329207}
 --- !u!1 &1447519491
 GameObject:
   m_ObjectHideFlags: 0

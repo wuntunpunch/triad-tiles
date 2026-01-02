@@ -67,7 +67,7 @@ public class TileView : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
         {
             noteText.text = Data.IsSingleNote 
                 ? Data.PrimaryNote 
-                : string.Join("\n", Data.notes);
+                : string.Join(" ", Data.notes);
         }
         
         // Update color
