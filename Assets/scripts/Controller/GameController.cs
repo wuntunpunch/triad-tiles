@@ -228,6 +228,14 @@ public class GameController : MonoBehaviour
             {
                 GameEvents.FireTilesMerged(fromPos, toPos, merged);
                 
+                // If 3 notes but not a valid chord, destroy it (no points)
+                if (merged.IsComplete && matcher.CheckForChord(merged.notes) == null)
+                {
+                    board.RemoveTile(toPos);
+                    GameEvents.FireTileDestroyed(toPos);
+                    return;
+                }
+                
                 // Check for triads after merge
                 StartCoroutine(CheckForTriadsDelayed());
             }
