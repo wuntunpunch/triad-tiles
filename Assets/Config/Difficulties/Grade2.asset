@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff93ea75ff644439c97318178d4115c1, type: 3}
+  m_Name: Grade2
+  m_EditorClassIdentifier: Assembly-CSharp::DifficultyConfig
+  gradeName: Grade 2
+  description: C, G, D, F, A, Bb, Eb, Am, Em and Dm Tonic triads
+  availableNotes:
+  - C
+  - D
+  - E
+  - F
+  - G
+  - A
+  - B
+  - F#
+  - C#
+  - Bb
+  - Eb
+  validChords:
+  - chordName: C
+    displayName: C Major
+    notes:
+    - C
+    - E
+    - G
+  - chordName: G
+    displayName: G Major
+    notes:
+    - G
+    - B
+    - D
+  - chordName: D
+    displayName: D Major
+    notes:
+    - D
+    - F#
+    - A
+  - chordName: F
+    displayName: F Major
+    notes:
+    - F
+    - A
+    - C
+  - chordName: A
+    displayName: A Major
+    notes:
+    - A
+    - C#
+    - E
+  - chordName: Bb
+    displayName: Bb Major
+    notes:
+    - Bb
+    - D
+    - F
+  - chordName: Eb
+    displayName: Eb Major
+    notes:
+    - Eb
+    - G
+    - Bb
+  - chordName: Am
+    displayName: A Minor
+    notes:
+    - A
+    - C
+    - E
+  - chordName: Em
+    displayName: E Minor
+    notes:
+    - E
+    - G
+    - B
+  - chordName: Dm
+    displayName: D Minor
+    notes:
+    - D
+    - F
+    - A
+  spawnIntervalMultiplier: 1
+  durationMultiplier: 1
