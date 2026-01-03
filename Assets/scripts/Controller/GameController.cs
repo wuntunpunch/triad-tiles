@@ -25,7 +25,6 @@ public class GameController : MonoBehaviour
     private int score;
     private float timeRemaining;
     private int combo;
-    private float lastMatchTime;
     private bool isPlaying;
     private float nextSpawnTime;
     
@@ -71,13 +70,6 @@ public class GameController : MonoBehaviour
         {
             EndGame();
             return;
-        }
-        
-        // Combo decay
-        if (combo > 0 && Time.time - lastMatchTime > gameConfig.comboResetTime)
-        {
-            combo = 0;
-            GameEvents.FireComboChanged(0, 1);
         }
         
         // Tile spawning
@@ -228,11 +220,15 @@ public class GameController : MonoBehaviour
             {
                 GameEvents.FireTilesMerged(fromPos, toPos, merged);
                 
-                // If 3 notes but not a valid chord, destroy it (no points)
+                // If 3 notes but not a valid chord, destroy it (no points) and reset combo
                 if (merged.IsComplete && matcher.CheckForChord(merged.notes) == null)
                 {
                     board.RemoveTile(toPos);
                     GameEvents.FireTileDestroyed(toPos);
+                    
+                    // Reset combo on mistake
+                    combo = 0;
+                    GameEvents.FireComboChanged(0, 1);
                     return;
                 }
                 
@@ -302,7 +298,6 @@ public class GameController : MonoBehaviour
         
         // Update combo
         combo++;
-        lastMatchTime = Time.time;
         GameEvents.FireComboChanged(combo, GetComboMultiplier());
 
         // Calculate score
