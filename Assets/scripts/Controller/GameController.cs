@@ -296,11 +296,7 @@ public class GameController : MonoBehaviour
             GameEvents.FireTriadMatched(match.Positions, match.ChordName);
         }
         
-        // Update combo
-        combo++;
-        GameEvents.FireComboChanged(combo, GetComboMultiplier());
-
-        // Calculate score
+        // Calculate score (before incrementing combo so first match uses x1)
         int baseScore = gameConfig.basePointsPerTriad * matches.Count;
         int bonusScore = matchedRequestedChord ? gameConfig.requestedChordBonus : 0;
         int multiplier = GetComboMultiplier();
@@ -309,6 +305,10 @@ public class GameController : MonoBehaviour
         // Update score
         score += totalScore;
         GameEvents.FireScoreChanged(score);
+        
+        // Update combo (after scoring, so next match benefits from increased multiplier)
+        combo++;
+        GameEvents.FireComboChanged(combo, GetComboMultiplier());
         
         // Show score popup at middle match position
         if (matches.Count > 0)
