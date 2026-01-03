@@ -228,7 +228,7 @@ public class GameController : MonoBehaviour
                     
                     // Reset combo on mistake
                     combo = 0;
-                    GameEvents.FireComboChanged(0, 1);
+                    GameEvents.FireComboChanged(combo, GetComboMultiplier());
                     return;
                 }
                 

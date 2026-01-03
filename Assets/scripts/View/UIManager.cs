@@ -153,11 +153,8 @@ public class UIManager : MonoBehaviour
     {
         if (comboText != null)
         {
-            if (combo > 0)
-            {
-                comboText.gameObject.SetActive(true);
-                comboText.text = $"x{multiplier}";
-            }
+            comboText.gameObject.SetActive(true);
+            comboText.text = $"x{multiplier}";
         }
     }
     
