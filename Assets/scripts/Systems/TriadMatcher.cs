@@ -57,9 +57,7 @@ public class TriadMatcher
     
     /// <summary>
     /// Finds all triad matches on the board.
-    /// Checks both:
-    /// 1. Merged tiles containing 3 notes that form a valid chord
-    /// 2. Three adjacent single-note tiles in a line forming a valid chord
+    /// Checks merged tiles containing 3 notes that form a valid chord.
     /// Returns list of matches (each match is list of positions + chord name).
     /// </summary>
     public List<TriadMatch> FindMatches(BoardModel board)
@@ -85,73 +83,7 @@ public class TriadMatcher
             }
         }
         
-        // Check horizontal lines of 3 single-note tiles
-        for (int row = 0; row < size; row++)
-        {
-            for (int col = 0; col <= size - 3; col++)
-            {
-                var match = CheckLine(board, row, col, 0, 1);
-                if (match != null) matches.Add(match);
-            }
-        }
-        
-        // Check vertical lines of 3 single-note tiles
-        for (int col = 0; col < size; col++)
-        {
-            for (int row = 0; row <= size - 3; row++)
-            {
-                var match = CheckLine(board, row, col, 1, 0);
-                if (match != null) matches.Add(match);
-            }
-        }
-        
-        // Check diagonal (top-left to bottom-right)
-        for (int row = 0; row <= size - 3; row++)
-        {
-            for (int col = 0; col <= size - 3; col++)
-            {
-                var match = CheckLine(board, row, col, 1, 1);
-                if (match != null) matches.Add(match);
-            }
-        }
-        
-        // Check diagonal (top-right to bottom-left)
-        for (int row = 0; row <= size - 3; row++)
-        {
-            for (int col = 2; col < size; col++)
-            {
-                var match = CheckLine(board, row, col, 1, -1);
-                if (match != null) matches.Add(match);
-            }
-        }
-        
         return matches;
-    }
-    
-    private TriadMatch CheckLine(BoardModel board, int startRow, int startCol, int dRow, int dCol)
-    {
-        var positions = new List<Vector2Int>();
-        var notes = new List<string>();
-        
-        for (int i = 0; i < 3; i++)
-        {
-            int row = startRow + i * dRow;
-            int col = startCol + i * dCol;
-            
-            var tile = board.GetTile(row, col);
-            
-            // Only match single-note tiles in a line
-            if (tile == null || !tile.IsSingleNote)
-                return null;
-            
-            positions.Add(new Vector2Int(row, col));
-            notes.Add(tile.PrimaryNote);
-        }
-        
-        string chordName = CheckForChord(notes);
-        if (chordName == null) return null;
-        
-        return new TriadMatch(positions, chordName, notes);
     }
 }
 
