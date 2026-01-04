@@ -388,11 +388,13 @@ MonoBehaviour:
   chordContainer: {fileID: 845549256}
   chordBadgePrefab: {fileID: 0}
   font: {fileID: 11400000, guid: 7137805b022d44869b12d93cb388c588, type: 2}
-  badgeColor: {r: 0.2, g: 0.3, b: 0.5, a: 0.9}
-  textColor: {r: 1, g: 1, b: 1, a: 1}
-  fontSize: 18
+  buildableColor: {r: 0.2, g: 0.5, b: 0.3, a: 0.9}
+  buildableTextColor: {r: 1, g: 1, b: 1, a: 1}
+  almostColor: {r: 0.4, g: 0.4, b: 0.5, a: 0.9}
+  almostTextColor: {r: 0.9, g: 0.9, b: 0.9, a: 1}
   useShortNames: 1
-  noBuildableText: "\u2014"
+  fontSize: 26
+  noChordsText: Nothing yet!
 --- !u!114 &202723789
 MonoBehaviour:
   m_ObjectHideFlags: 0
