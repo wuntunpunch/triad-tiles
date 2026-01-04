@@ -22,6 +22,10 @@ public class GameController : MonoBehaviour
     private TriadMatcher matcher;
     private DifficultyConfig currentDifficulty;
     
+    // Expose current difficulty and board for UI panels
+    public DifficultyConfig CurrentDifficulty => currentDifficulty;
+    public BoardModel Board => board;
+    
     private int score;
     private float timeRemaining;
     private int combo;
