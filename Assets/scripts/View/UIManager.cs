@@ -178,6 +178,6 @@ public class UIManager : MonoBehaviour
         ShowPanel("GameOver");
         
         if (finalScoreText != null)
-            finalScoreText.text = $"Score: {finalScore}";
+            finalScoreText.text = finalScore.ToString();
     }
 }
