@@ -136,7 +136,7 @@ public class TileView : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
             backgroundImage.color = errorFlashColor;
             backgroundImage.DOColor(original, 0.3f);
         }
-        transform.DOShakePosition(0.3f, 10f, 20);
+        // TODO: Add shake animation back when doing game juice pass
     }
     
     // ===== DRAG INPUT =====
