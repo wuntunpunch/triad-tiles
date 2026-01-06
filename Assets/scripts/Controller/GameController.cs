@@ -330,6 +330,9 @@ public class GameController : MonoBehaviour
         // Request new chord if matched
         if (matchedRequestedChord)
         {
+            // Award bonus time for completing requested chord
+            timeRemaining += gameConfig.requestedChordBonusTime;
+            
             GameEvents.FireRequestedChordCompleted(requestedChord);
             RequestNewChord();
         }

@@ -43,6 +43,25 @@ public static class GameEvents
     public static event Action<TileView, Vector2> OnTileDragEnded;
     public static event Action<Vector2Int> OnCellHovered; // grid position being hovered
     public static event Action OnHoverCleared;
+
+    // ---- REQUESTED CHORD EVENTS ----
+    
+    /// <summary>
+    /// Fired when the requested chord changes (or becomes null when none is active)
+    /// </summary>
+    public static Action<ChordDefinition> RequestedChordChanged;
+    
+    /// <summary>
+    /// Fired when the player successfully completes the requested chord
+    /// Parameters: completed chord, bonus points awarded, bonus time awarded
+    /// </summary>
+    public static Action<ChordDefinition, int, float> RequestedChordCompleted;
+    
+    /// <summary>
+    /// Fired when bonus time is awarded (for timer to listen to)
+    /// Parameter: seconds to add
+    /// </summary>
+    public static Action<float> BonusTimeAwarded;
     
     // ===== FIRE METHODS =====
     // These are called by the systems that own each event
