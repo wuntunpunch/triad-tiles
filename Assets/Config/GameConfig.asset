@@ -18,7 +18,8 @@ MonoBehaviour:
   spawnInterval: 2.5
   timerWarningThreshold: 10
   basePointsPerTriad: 100
-  requestedChordBonus: 0
+  requestedChordBonus: 100
+  requestedChordBonusTime: 5
   comboMultipliers: 0100000002000000030000000400000005000000
   comboResetTime: 3
   initialTileCount: 4

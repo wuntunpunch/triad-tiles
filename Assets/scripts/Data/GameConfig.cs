@@ -1,8 +1,7 @@
 using UnityEngine;
-using System.Collections.Generic;
 
 /// <summary>
-/// ScriptableObject containing all game configuration.
+/// ScriptableObject for all game-wide configuration.
 /// Create instances in Unity: Right-click > Create > TriadTiles > Game Config
 /// </summary>
 [CreateAssetMenu(fileName = "GameConfig", menuName = "TriadTiles/Game Config")]
@@ -20,7 +19,8 @@ public class GameConfig : ScriptableObject
     
     [Header("Scoring")]
     public int basePointsPerTriad = 100;
-    public int requestedChordBonus = 50;
+    public int requestedChordBonus = 200;
+    public float requestedChordBonusTime = 5f;
     public int[] comboMultipliers = { 1, 2, 3, 4, 5 };
     public float comboResetTime = 3f;
     
