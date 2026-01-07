@@ -34,6 +34,8 @@ public class GameController : MonoBehaviour
     
     private string requestedChord;
     
+    private const int MaxSameNote = 3;
+    
     void Awake()
     {
         if (Instance == null)
@@ -184,8 +186,54 @@ public class GameController : MonoBehaviour
         if (currentDifficulty == null || currentDifficulty.availableNotes.Length == 0)
             return "C";
         
-        var notes = currentDifficulty.availableNotes;
-        return notes[Random.Range(0, notes.Length)];
+        // Count notes currently on the board
+        Dictionary<string, int> noteCounts = CountNotesOnBoard();
+        
+        // Filter to notes that haven't reached the limit
+        List<string> availableNotes = new List<string>();
+        foreach (string note in currentDifficulty.availableNotes)
+        {
+            int count = noteCounts.ContainsKey(note) ? noteCounts[note] : 0;
+            if (count < MaxSameNote)
+            {
+                availableNotes.Add(note);
+            }
+        }
+        
+        // If all notes are at limit, pick randomly anyway (edge case safety)
+        if (availableNotes.Count == 0)
+        {
+            var notes = currentDifficulty.availableNotes;
+            return notes[Random.Range(0, notes.Length)];
+        }
+        
+        return availableNotes[Random.Range(0, availableNotes.Count)];
+    }
+    
+    private Dictionary<string, int> CountNotesOnBoard()
+    {
+        Dictionary<string, int> counts = new Dictionary<string, int>();
+        
+        for (int row = 0; row < gameConfig.gridSize; row++)
+        {
+            for (int col = 0; col < gameConfig.gridSize; col++)
+            {
+                TileData tile = board.GetTile(new Vector2Int(row, col));
+                
+                // Only count single-note tiles toward the limit
+                // Merged tiles are "in progress" and shouldn't block spawning
+                if (tile != null && tile.notes.Count == 1)
+                {
+                    string note = tile.notes[0];
+                    if (counts.ContainsKey(note))
+                        counts[note]++;
+                    else
+                        counts[note] = 1;
+                }
+            }
+        }
+        
+        return counts;
     }
     
     // ===== TILE MOVEMENT =====
