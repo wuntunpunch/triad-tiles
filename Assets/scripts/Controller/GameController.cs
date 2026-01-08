@@ -17,6 +17,9 @@ public class GameController : MonoBehaviour
     [Header("Views")]
     [SerializeField] private BoardView boardView;
     
+    [Header("Managers")]
+    [SerializeField] private RequestedChordsManager requestedChordsManager;
+    
     // Current game state
     private BoardModel board;
     private TriadMatcher matcher;
@@ -31,8 +34,6 @@ public class GameController : MonoBehaviour
     private int combo;
     private bool isPlaying;
     private float nextSpawnTime;
-    
-    private string requestedChord;
     
     private const int MaxSameNote = 3;
     
@@ -123,8 +124,7 @@ public class GameController : MonoBehaviour
         GameEvents.FireScoreChanged(0);
         GameEvents.FireComboChanged(0, 1);
         
-        // Request a chord
-        RequestNewChord();
+        // RequestedChordsManager handles its own initialization via OnGameStart event
 
         // Show game panel BEFORE spawning (ensures BoardView is subscribed)
         GameEvents.FirePanelRequested("Game");
@@ -335,24 +335,34 @@ public class GameController : MonoBehaviour
         
         // Collect all positions to remove (avoid duplicates)
         HashSet<Vector2Int> toRemove = new HashSet<Vector2Int>();
-        bool matchedRequestedChord = false;
+        int requestedChordBonusTotal = 0;
+        float bonusTimeTotal = 0f;
+        List<int> completedSlots = new List<int>();
         
         foreach (var match in matches)
         {
             foreach (var pos in match.Positions)
                 toRemove.Add(pos);
             
-            if (match.ChordName == requestedChord)
-                matchedRequestedChord = true;
+            // Check if this chord matches any requested slot
+            if (requestedChordsManager != null)
+            {
+                int slotIndex = requestedChordsManager.CheckChordMatch(match.ChordName);
+                if (slotIndex >= 0)
+                {
+                    requestedChordBonusTotal += gameConfig.requestedChordBonus;
+                    bonusTimeTotal += gameConfig.requestedChordBonusTime;
+                    completedSlots.Add(slotIndex);
+                }
+            }
             
             GameEvents.FireTriadMatched(match.Positions, match.ChordName);
         }
         
         // Calculate score (before incrementing combo so first match uses x1)
         int baseScore = gameConfig.basePointsPerTriad * matches.Count;
-        int bonusScore = matchedRequestedChord ? gameConfig.requestedChordBonus : 0;
         int multiplier = GetComboMultiplier();
-        int totalScore = (baseScore + bonusScore) * multiplier;
+        int totalScore = (baseScore + requestedChordBonusTotal) * multiplier;
         
         // Update score
         score += totalScore;
@@ -375,14 +385,19 @@ public class GameController : MonoBehaviour
             GameEvents.FireTileDestroyed(pos);
         }
         
-        // Request new chord if matched
-        if (matchedRequestedChord)
+        // Award bonus time and complete slots
+        if (bonusTimeTotal > 0)
         {
-            // Award bonus time for completing requested chord
-            timeRemaining += gameConfig.requestedChordBonusTime;
-            
-            GameEvents.FireRequestedChordCompleted(requestedChord);
-            RequestNewChord();
+            timeRemaining += bonusTimeTotal;
+        }
+        
+        // Complete matched slots (triggers new chord requests)
+        if (requestedChordsManager != null)
+        {
+            foreach (int slotIndex in completedSlots)
+            {
+                requestedChordsManager.CompleteSlot(slotIndex);
+            }
         }
         
         // Chain check
@@ -396,26 +411,5 @@ public class GameController : MonoBehaviour
         
         int index = Mathf.Min(combo, gameConfig.comboMultipliers.Length - 1);
         return gameConfig.comboMultipliers[index];
-    }
-    
-    // ===== REQUESTED CHORD =====
-    
-    private void RequestNewChord()
-    {
-        if (currentDifficulty == null || currentDifficulty.validChords.Length == 0)
-        {
-            requestedChord = "";
-            return;
-        }
-        
-        var chords = currentDifficulty.validChords;
-        var selected = chords[Random.Range(0, chords.Length)];
-        requestedChord = selected.chordName;
-        
-        string displayName = selected.displayName;
-        if (string.IsNullOrEmpty(displayName))
-            displayName = selected.chordName;
-        
-        GameEvents.FireChordRequested(displayName);
     }
 }

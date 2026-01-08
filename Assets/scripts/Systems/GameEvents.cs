@@ -22,7 +22,7 @@ public static class GameEvents
     
     // ===== MATCH EVENTS =====
     public static event Action<List<Vector2Int>, string> OnTriadMatched; // positions, chord name
-    public static event Action<string> OnRequestedChordCompleted; // chord name
+    public static event Action<string> OnRequestedChordCompleted; // chord name (legacy, kept for compatibility)
     
     // ===== SCORE EVENTS =====
     public static event Action<int> OnScoreChanged; // new total
@@ -35,7 +35,12 @@ public static class GameEvents
     
     // ===== UI EVENTS =====
     public static event Action<string> OnPanelRequested; // panel name
-    public static event Action<string> OnChordRequested; // chord to display
+    public static event Action<string> OnChordRequested; // chord to display (legacy, kept for compatibility)
+    
+    // ===== REQUESTED CHORD SLOT EVENTS =====
+    public static event Action<int> OnSlotUnlocked; // slot index
+    public static event Action<int, string> OnSlotChordChanged; // slot index, display name
+    public static event Action<int, string> OnSlotCompleted; // slot index, chord name
     
     // ===== INPUT EVENTS =====
     public static event Action<TileView> OnTileDragStarted;
@@ -44,7 +49,7 @@ public static class GameEvents
     public static event Action<Vector2Int> OnCellHovered; // grid position being hovered
     public static event Action OnHoverCleared;
 
-    // ---- REQUESTED CHORD EVENTS ----
+    // ---- REQUESTED CHORD EVENTS (Legacy - consider migrating to slot events) ----
     
     /// <summary>
     /// Fired when the requested chord changes (or becomes null when none is active)
@@ -89,6 +94,11 @@ public static class GameEvents
     public static void FirePanelRequested(string panelName) => OnPanelRequested?.Invoke(panelName);
     public static void FireChordRequested(string chordName) => OnChordRequested?.Invoke(chordName);
     
+    // Slot events
+    public static void FireSlotUnlocked(int slotIndex) => OnSlotUnlocked?.Invoke(slotIndex);
+    public static void FireSlotChordChanged(int slotIndex, string displayName) => OnSlotChordChanged?.Invoke(slotIndex, displayName);
+    public static void FireSlotCompleted(int slotIndex, string chordName) => OnSlotCompleted?.Invoke(slotIndex, chordName);
+    
     public static void FireTileDragStarted(TileView tile) => OnTileDragStarted?.Invoke(tile);
     public static void FireTileDragging(TileView tile, Vector2 pos) => OnTileDragging?.Invoke(tile, pos);
     public static void FireTileDragEnded(TileView tile, Vector2 pos) => OnTileDragEnded?.Invoke(tile, pos);
@@ -122,6 +132,10 @@ public static class GameEvents
         
         OnPanelRequested = null;
         OnChordRequested = null;
+        
+        OnSlotUnlocked = null;
+        OnSlotChordChanged = null;
+        OnSlotCompleted = null;
         
         OnTileDragStarted = null;
         OnTileDragging = null;
