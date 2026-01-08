@@ -46,10 +46,13 @@ public class RequestedChordSlotView : MonoBehaviour
         {
             canvasGroup.alpha = 0f;
             isVisible = false;
+            isUnlocked = false;
         }
         else
         {
+            canvasGroup.alpha = 1f;
             isVisible = true;
+            isUnlocked = true;
         }
     }
     
@@ -58,7 +61,7 @@ public class RequestedChordSlotView : MonoBehaviour
         GameEvents.OnSlotUnlocked += HandleSlotUnlocked;
         GameEvents.OnSlotChordChanged += HandleChordChanged;
         GameEvents.OnSlotCompleted += HandleSlotCompleted;
-        GameEvents.OnGameStart += HandleGameStart;
+        GameEvents.OnSlotsReset += HandleSlotsReset;
     }
     
     void OnDisable()
@@ -66,10 +69,10 @@ public class RequestedChordSlotView : MonoBehaviour
         GameEvents.OnSlotUnlocked -= HandleSlotUnlocked;
         GameEvents.OnSlotChordChanged -= HandleChordChanged;
         GameEvents.OnSlotCompleted -= HandleSlotCompleted;
-        GameEvents.OnGameStart -= HandleGameStart;
+        GameEvents.OnSlotsReset -= HandleSlotsReset;
     }
     
-    private void HandleGameStart()
+    private void HandleSlotsReset()
     {
         // Reset state
         isUnlocked = slotIndex == 0;
@@ -106,9 +109,15 @@ public class RequestedChordSlotView : MonoBehaviour
     {
         if (index != slotIndex) return;
         
+        Debug.Log($"[RequestedChordSlotView] Slot {slotIndex} received chord: {displayName}");
+        
         if (chordNameText != null)
         {
             chordNameText.text = displayName;
+        }
+        else
+        {
+            Debug.LogWarning($"[RequestedChordSlotView] Slot {slotIndex} has no chordNameText assigned!");
         }
         
         // If this is the first chord for this slot and it's not visible yet, appear

@@ -37,13 +37,11 @@ public class RequestedChordsManager : MonoBehaviour
     
     void OnEnable()
     {
-        GameEvents.OnGameStart += HandleGameStart;
         GameEvents.OnGameOver += HandleGameOver;
     }
     
     void OnDisable()
     {
-        GameEvents.OnGameStart -= HandleGameStart;
         GameEvents.OnGameOver -= HandleGameOver;
     }
     
@@ -63,10 +61,14 @@ public class RequestedChordsManager : MonoBehaviour
         }
     }
     
-    private void HandleGameStart()
+    /// <summary>
+    /// Called by GameController after difficulty is set and game is ready.
+    /// </summary>
+    public void StartNewGame(DifficultyConfig difficulty)
     {
-        // Get current difficulty from GameController
-        currentDifficulty = GameController.Instance?.CurrentDifficulty;
+        currentDifficulty = difficulty;
+        
+        Debug.Log($"[RequestedChordsManager] StartNewGame called with difficulty: {difficulty?.gradeName ?? "NULL"}");
         
         // Reset all slots
         foreach (var slot in slots)
@@ -77,6 +79,9 @@ public class RequestedChordsManager : MonoBehaviour
         
         gameStartTime = Time.time;
         isActive = true;
+        
+        // Fire reset event so views can clear themselves BEFORE we request chords
+        GameEvents.FireSlotsReset();
         
         // Request chord for first slot immediately
         RequestChordForSlot(0);
@@ -119,10 +124,17 @@ public class RequestedChordsManager : MonoBehaviour
     private void RequestChordForSlot(int slotIndex)
     {
         if (currentDifficulty == null || currentDifficulty.validChords.Length == 0)
+        {
+            Debug.LogWarning($"[RequestedChordsManager] Cannot request chord - difficulty is null or has no valid chords");
             return;
+        }
         
         var slot = slots[slotIndex];
-        if (!slot.IsUnlocked) return;
+        if (!slot.IsUnlocked) 
+        {
+            Debug.Log($"[RequestedChordsManager] Slot {slotIndex} is not unlocked yet");
+            return;
+        }
         
         // Build list of available chords (not already in another slot)
         List<ChordDefinition> available = new List<ChordDefinition>();
@@ -157,6 +169,8 @@ public class RequestedChordsManager : MonoBehaviour
         string displayName = string.IsNullOrEmpty(selected.displayName) 
             ? selected.chordName 
             : selected.displayName;
+        
+        Debug.Log($"[RequestedChordsManager] Slot {slotIndex} now requesting: {displayName}");
         GameEvents.FireSlotChordChanged(slotIndex, displayName);
     }
     

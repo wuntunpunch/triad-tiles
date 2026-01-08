@@ -123,11 +123,20 @@ public class GameController : MonoBehaviour
         // Fire initial events
         GameEvents.FireScoreChanged(0);
         GameEvents.FireComboChanged(0, 1);
-        
-        // RequestedChordsManager handles its own initialization via OnGameStart event
 
-        // Show game panel BEFORE spawning (ensures BoardView is subscribed)
+        // Show game panel BEFORE initializing chords (ensures views are subscribed)
         GameEvents.FirePanelRequested("Game");
+        
+        // Initialize RequestedChordsManager with current difficulty
+        // Must happen AFTER panel is shown so views can receive events
+        if (requestedChordsManager != null)
+        {
+            requestedChordsManager.StartNewGame(currentDifficulty);
+        }
+        else
+        {
+            Debug.LogWarning("[GameController] RequestedChordsManager reference not assigned!");
+        }
         
         // Spawn initial tiles
         for (int i = 0; i < gameConfig.initialTileCount; i++)

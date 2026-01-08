@@ -38,6 +38,7 @@ public static class GameEvents
     public static event Action<string> OnChordRequested; // chord to display (legacy, kept for compatibility)
     
     // ===== REQUESTED CHORD SLOT EVENTS =====
+    public static event Action OnSlotsReset; // fired before new chord requests
     public static event Action<int> OnSlotUnlocked; // slot index
     public static event Action<int, string> OnSlotChordChanged; // slot index, display name
     public static event Action<int, string> OnSlotCompleted; // slot index, chord name
@@ -95,6 +96,7 @@ public static class GameEvents
     public static void FireChordRequested(string chordName) => OnChordRequested?.Invoke(chordName);
     
     // Slot events
+    public static void FireSlotsReset() => OnSlotsReset?.Invoke();
     public static void FireSlotUnlocked(int slotIndex) => OnSlotUnlocked?.Invoke(slotIndex);
     public static void FireSlotChordChanged(int slotIndex, string displayName) => OnSlotChordChanged?.Invoke(slotIndex, displayName);
     public static void FireSlotCompleted(int slotIndex, string chordName) => OnSlotCompleted?.Invoke(slotIndex, chordName);
@@ -136,6 +138,7 @@ public static class GameEvents
         OnSlotUnlocked = null;
         OnSlotChordChanged = null;
         OnSlotCompleted = null;
+        OnSlotsReset = null;
         
         OnTileDragStarted = null;
         OnTileDragging = null;
