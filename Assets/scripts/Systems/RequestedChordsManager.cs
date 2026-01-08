@@ -121,7 +121,7 @@ public class RequestedChordsManager : MonoBehaviour
         RequestChordForSlot(slotIndex);
     }
     
-    private void RequestChordForSlot(int slotIndex)
+    private void RequestChordForSlot(int slotIndex, string excludeChord = null)
     {
         if (currentDifficulty == null || currentDifficulty.validChords.Length == 0)
         {
@@ -136,17 +136,34 @@ public class RequestedChordsManager : MonoBehaviour
             return;
         }
         
-        // Build list of available chords (not already in another slot)
+        // Build list of available chords (not already in another slot, and not the just-completed chord)
         List<ChordDefinition> available = new List<ChordDefinition>();
         foreach (var chord in currentDifficulty.validChords)
         {
-            if (!activeChordNames.Contains(chord.chordName))
+            // Skip if already in another slot
+            if (activeChordNames.Contains(chord.chordName))
+                continue;
+            
+            // Skip if this is the chord we just completed
+            if (!string.IsNullOrEmpty(excludeChord) && chord.chordName == excludeChord)
+                continue;
+                
+            available.Add(chord);
+        }
+        
+        // If all chords are taken or excluded, allow any chord except the excluded one
+        if (available.Count == 0)
+        {
+            foreach (var chord in currentDifficulty.validChords)
             {
-                available.Add(chord);
+                if (string.IsNullOrEmpty(excludeChord) || chord.chordName != excludeChord)
+                {
+                    available.Add(chord);
+                }
             }
         }
         
-        // If all chords are taken, allow duplicates (edge case with few chords)
+        // Last resort: if still empty (only one chord in difficulty), allow it
         if (available.Count == 0)
         {
             available.AddRange(currentDifficulty.validChords);
@@ -192,27 +209,28 @@ public class RequestedChordsManager : MonoBehaviour
     
     /// <summary>
     /// Called when a requested chord is successfully matched.
-    /// Clears the slot and requests a new chord.
+    /// Clears the slot and requests a new chord (excluding the just-completed one).
     /// </summary>
     public void CompleteSlot(int slotIndex)
     {
         if (slotIndex < 0 || slotIndex >= MaxSlots) return;
         
         var slot = slots[slotIndex];
-        string completedChord = slot.DisplayName;
+        string completedChordName = slot.ChordName;
+        string completedDisplayName = slot.DisplayName;
         
         // Remove from active tracking
-        if (!string.IsNullOrEmpty(slot.ChordName))
+        if (!string.IsNullOrEmpty(completedChordName))
         {
-            activeChordNames.Remove(slot.ChordName);
+            activeChordNames.Remove(completedChordName);
         }
         
         // Clear and request new
         slot.Clear();
-        GameEvents.FireSlotCompleted(slotIndex, completedChord);
+        GameEvents.FireSlotCompleted(slotIndex, completedDisplayName);
         
-        // Request new chord for this slot
-        RequestChordForSlot(slotIndex);
+        // Request new chord for this slot, excluding the one just completed
+        RequestChordForSlot(slotIndex, completedChordName);
     }
     
     /// <summary>
