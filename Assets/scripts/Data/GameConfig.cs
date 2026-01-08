@@ -24,6 +24,12 @@ public class GameConfig : ScriptableObject
     public int[] comboMultipliers = { 1, 2, 3, 4, 5 };
     public float comboResetTime = 3f;
     
+    [Header("Requested Chord Slots")]
+    [Tooltip("Time in seconds after game start when slot 2 unlocks")]
+    public float slot2UnlockTime = 15f;
+    [Tooltip("Time in seconds after game start when slot 3 unlocks")]
+    public float slot3UnlockTime = 30f;
+    
     [Header("Initial Setup")]
     public int initialTileCount = 4;
     
