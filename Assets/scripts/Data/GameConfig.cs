@@ -31,7 +31,13 @@ public class GameConfig : ScriptableObject
     public float slot3UnlockTime = 30f;
     
     [Header("Initial Setup")]
-    public int initialTileCount = 4;
+    [Tooltip("Starting tiles. 6 recommended for good early-game pacing with seeded start.")]
+    public int initialTileCount = 6;
+    
+    [Header("Spawn Weighting")]
+    [Tooltip("Chance (0-1) to spawn a note that completes an existing 2-note pair. 0.4-0.5 recommended.")]
+    [Range(0f, 1f)]
+    public float completionSpawnWeight = 0.45f;
     
     [Header("Animation Durations")]
     public float tileSpawnDuration = 0.3f;
