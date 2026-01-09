@@ -22,7 +22,10 @@ MonoBehaviour:
   requestedChordBonusTime: 5
   comboMultipliers: 0100000002000000030000000400000005000000
   comboResetTime: 3
-  initialTileCount: 4
+  slot2UnlockTime: 15
+  slot3UnlockTime: 30
+  initialTileCount: 6
+  completionSpawnWeight: 0.4
   tileSpawnDuration: 0.3
   tileMergeDuration: 0.2
   tileMoveDuration: 0.2

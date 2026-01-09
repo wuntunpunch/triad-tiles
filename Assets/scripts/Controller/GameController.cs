@@ -138,11 +138,8 @@ public class GameController : MonoBehaviour
             Debug.LogWarning("[GameController] RequestedChordsManager reference not assigned!");
         }
         
-        // Spawn initial tiles
-        for (int i = 0; i < gameConfig.initialTileCount; i++)
-        {
-            SpawnRandomTile();
-        }
+        // Spawn initial tiles with seeded start
+        SpawnSeededInitialTiles();
     }
     
     private void EndGame()
@@ -181,13 +178,157 @@ public class GameController : MonoBehaviour
         }
         
         Vector2Int pos = emptyCells[Random.Range(0, emptyCells.Count)];
-        string note = GetRandomNote();
+        string note = GetWeightedNote();
         Debug.Log($"Spawning tile '{note}' at {pos}");
         
         TileData data = new TileData(note, pos.x, pos.y);
         board.PlaceTile(data);
         
         GameEvents.FireTileSpawned(pos, data);
+    }
+    
+    /// <summary>
+    /// Spawns initial tiles with a "seeded" start - guarantees 2 notes from a random chord
+    /// so players have an actionable goal immediately.
+    /// </summary>
+    private void SpawnSeededInitialTiles()
+    {
+        if (currentDifficulty == null || currentDifficulty.validChords.Length == 0)
+        {
+            // Fallback to random spawning
+            for (int i = 0; i < gameConfig.initialTileCount; i++)
+                SpawnRandomTile();
+            return;
+        }
+        
+        // Pick a random chord to seed
+        ChordDefinition seedChord = currentDifficulty.validChords[
+            Random.Range(0, currentDifficulty.validChords.Length)];
+        
+        // Spawn 2 of the 3 notes from this chord
+        List<string> chordNotes = new List<string>(seedChord.notes);
+        int skipIndex = Random.Range(0, chordNotes.Count); // Which note to NOT spawn
+        
+        List<Vector2Int> emptyCells = board.GetEmptyCells();
+        int seededCount = 0;
+        
+        for (int i = 0; i < chordNotes.Count && emptyCells.Count > 0; i++)
+        {
+            if (i == skipIndex) continue; // Skip one note so player has a goal
+            
+            Vector2Int pos = emptyCells[Random.Range(0, emptyCells.Count)];
+            emptyCells.Remove(pos);
+            
+            TileData data = new TileData(chordNotes[i], pos.x, pos.y);
+            board.PlaceTile(data);
+            GameEvents.FireTileSpawned(pos, data);
+            seededCount++;
+        }
+        
+        Debug.Log($"[Seeded Start] Spawned {seededCount} notes from {seedChord.displayName}, missing {chordNotes[skipIndex]}");
+        
+        // Fill remaining initial tiles with weighted random notes
+        int remaining = gameConfig.initialTileCount - seededCount;
+        for (int i = 0; i < remaining; i++)
+        {
+            SpawnRandomTile();
+        }
+    }
+    
+    /// <summary>
+    /// Gets a note weighted toward completing existing pairs on the board.
+    /// Falls back to random selection if no completing notes are available.
+    /// </summary>
+    private string GetWeightedNote()
+    {
+        if (currentDifficulty == null || currentDifficulty.availableNotes.Length == 0)
+            return "C";
+        
+        Dictionary<string, int> noteCounts = CountNotesOnBoard();
+        
+        // Build list of notes that would complete existing pairs
+        List<string> completingNotes = FindCompletingNotes();
+        
+        // Filter completing notes by spawn limit
+        List<string> validCompletingNotes = new List<string>();
+        foreach (string note in completingNotes)
+        {
+            int count = noteCounts.ContainsKey(note) ? noteCounts[note] : 0;
+            if (count < MaxSameNote)
+                validCompletingNotes.Add(note);
+        }
+        
+        // Weighted chance to spawn a completing note if available
+        if (validCompletingNotes.Count > 0 && Random.value < gameConfig.completionSpawnWeight)
+        {
+            string chosen = validCompletingNotes[Random.Range(0, validCompletingNotes.Count)];
+            Debug.Log($"[Weighted Spawn] Chose completing note: {chosen}");
+            return chosen;
+        }
+        
+        // Otherwise fall back to random from available pool
+        return GetRandomNote();
+    }
+    
+    /// <summary>
+    /// Finds notes that would complete existing 2-note merged tiles into valid triads.
+    /// </summary>
+    private List<string> FindCompletingNotes()
+    {
+        List<string> completing = new List<string>();
+        
+        if (currentDifficulty == null || currentDifficulty.validChords == null)
+            return completing;
+        
+        // Scan board for 2-note merged tiles
+        for (int row = 0; row < gameConfig.gridSize; row++)
+        {
+            for (int col = 0; col < gameConfig.gridSize; col++)
+            {
+                TileData tile = board.GetTile(new Vector2Int(row, col));
+                if (tile != null && tile.notes.Count == 2)
+                {
+                    // Find which note(s) would complete this pair
+                    foreach (var chord in currentDifficulty.validChords)
+                    {
+                        string missing = GetMissingNote(tile.notes, chord);
+                        if (missing != null && !completing.Contains(missing))
+                        {
+                            completing.Add(missing);
+                        }
+                    }
+                }
+            }
+        }
+        
+        return completing;
+    }
+    
+    /// <summary>
+    /// Returns the missing note if the given notes are 2/3 of the chord, null otherwise.
+    /// </summary>
+    private string GetMissingNote(List<string> tileNotes, ChordDefinition chord)
+    {
+        if (chord.notes.Length != 3) return null;
+        
+        HashSet<string> chordSet = new HashSet<string>(chord.notes);
+        HashSet<string> tileSet = new HashSet<string>(tileNotes);
+        
+        // Check if both tile notes are in this chord
+        foreach (string note in tileNotes)
+        {
+            if (!chordSet.Contains(note))
+                return null;
+        }
+        
+        // Find the missing note
+        foreach (string note in chord.notes)
+        {
+            if (!tileSet.Contains(note))
+                return note;
+        }
+        
+        return null;
     }
     
     private string GetRandomNote()
