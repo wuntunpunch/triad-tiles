@@ -1,0 +1,1573 @@
+fileFormatVersion: 2
+guid: 64af497e577ad4fa7b1c42fe75ceefaf
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8413158710296487875
+    second: triadTilesBackground_0
+  - first:
+      213: -2912546446376637522
+    second: triadTilesBackground_1
+  - first:
+      213: -8241898239873290855
+    second: triadTilesBackground_2
+  - first:
+      213: -6424623511791867075
+    second: triadTilesBackground_3
+  - first:
+      213: -6456482816441109059
+    second: triadTilesBackground_4
+  - first:
+      213: -4281436630686055403
+    second: triadTilesBackground_5
+  - first:
+      213: 1540883052197525173
+    second: triadTilesBackground_6
+  - first:
+      213: 577492775707837744
+    second: triadTilesBackground_7
+  - first:
+      213: 5100701858544517646
+    second: triadTilesBackground_8
+  - first:
+      213: 7522664319406432375
+    second: triadTilesBackground_9
+  - first:
+      213: -2717787180214506627
+    second: triadTilesBackground_10
+  - first:
+      213: -7314809146040220452
+    second: triadTilesBackground_11
+  - first:
+      213: 6115703022106874483
+    second: triadTilesBackground_12
+  - first:
+      213: -6511677859155763682
+    second: triadTilesBackground_13
+  - first:
+      213: 3439311634702978704
+    second: triadTilesBackground_14
+  - first:
+      213: -6737188487849272842
+    second: triadTilesBackground_15
+  - first:
+      213: -5251383641446039914
+    second: triadTilesBackground_16
+  - first:
+      213: 2745143808273664534
+    second: triadTilesBackground_17
+  - first:
+      213: 3898643946863631479
+    second: triadTilesBackground_18
+  - first:
+      213: 3834622907298062379
+    second: triadTilesBackground_19
+  - first:
+      213: -3908870472959017810
+    second: triadTilesBackground_20
+  - first:
+      213: -8958543278529867843
+    second: triadTilesBackground_21
+  - first:
+      213: -1391793337721862907
+    second: triadTilesBackground_22
+  - first:
+      213: -2567745367870894834
+    second: triadTilesBackground_23
+  - first:
+      213: 2211978449641061575
+    second: triadTilesBackground_24
+  - first:
+      213: -6851843189206062612
+    second: triadTilesBackground_25
+  - first:
+      213: 6212467491744619749
+    second: triadTilesBackground_26
+  - first:
+      213: 6406497761641971288
+    second: triadTilesBackground_27
+  - first:
+      213: -8194985880041437457
+    second: triadTilesBackground_28
+  - first:
+      213: 1465344940378654747
+    second: triadTilesBackground_29
+  - first:
+      213: 2641113307589728344
+    second: triadTilesBackground_30
+  - first:
+      213: -7305322670454921854
+    second: triadTilesBackground_31
+  - first:
+      213: 7922333795400176906
+    second: triadTilesBackground_32
+  - first:
+      213: 3180859546470961774
+    second: triadTilesBackground_33
+  - first:
+      213: -2100467303021773451
+    second: triadTilesBackground_34
+  - first:
+      213: 1211346223984204775
+    second: triadTilesBackground_35
+  - first:
+      213: -9048690901483781588
+    second: triadTilesBackground_36
+  - first:
+      213: 4634145545778505303
+    second: triadTilesBackground_37
+  - first:
+      213: -8418094568446144573
+    second: triadTilesBackground_38
+  - first:
+      213: -8745611322336631168
+    second: triadTilesBackground_39
+  - first:
+      213: -8996473611156133245
+    second: triadTilesBackground_40
+  - first:
+      213: 5213032146346250937
+    second: triadTilesBackground_41
+  - first:
+      213: 467827463053228069
+    second: triadTilesBackground_42
+  - first:
+      213: 7627955524059284951
+    second: triadTilesBackground_43
+  - first:
+      213: 2087640754182802843
+    second: triadTilesBackground_44
+  - first:
+      213: -2421379743226278355
+    second: triadTilesBackground_45
+  - first:
+      213: 6639281956230060407
+    second: triadTilesBackground_46
+  - first:
+      213: 3497145513993559677
+    second: triadTilesBackground_47
+  - first:
+      213: -5798194189946095623
+    second: triadTilesBackground_48
+  - first:
+      213: 3497182849444078935
+    second: triadTilesBackground_49
+  - first:
+      213: -3784759583667939345
+    second: triadTilesBackground_50
+  - first:
+      213: -340413498599781823
+    second: triadTilesBackground_51
+  - first:
+      213: 4440628784695098789
+    second: triadTilesBackground_52
+  - first:
+      213: 6748901752579801819
+    second: triadTilesBackground_53
+  - first:
+      213: 4778593581818384167
+    second: triadTilesBackground_54
+  - first:
+      213: -3213518949338679539
+    second: triadTilesBackground_55
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: triadTilesBackground_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1972
+        width: 9
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c7a43ea54b81c470800000000000000
+      internalID: 8413158710296487875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: triadTilesBackground_1
+      rect:
+        serializedVersion: 2
+        x: 999
+        y: 1922
+        width: 25
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eabe4e7307e8497d0800000000000000
+      internalID: -2912546446376637522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: triadTilesBackground_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1893
+        width: 26
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99d6f61e735ee9d80800000000000000
+      internalID: -8241898239873290855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: triadTilesBackground_3
+      rect:
+        serializedVersion: 2
+        x: 862
+        y: 1868
+        width: 47
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3be50484f627d6a0800000000000000
+      internalID: -6424623511791867075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: triadTilesBackground_4
+      rect:
+        serializedVersion: 2
+        x: 906
+        y: 1932
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db53d9b1617f566a0800000000000000
+      internalID: -6456482816441109059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: triadTilesBackground_5
+      rect:
+        serializedVersion: 2
+        x: 565
+        y: 1788
+        width: 51
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 514cc9381184594c0800000000000000
+      internalID: -4281436630686055403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: triadTilesBackground_6
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 1913
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b637a6d8f0526510800000000000000
+      internalID: 1540883052197525173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: triadTilesBackground_7
+      rect:
+        serializedVersion: 2
+        x: 1015
+        y: 1894
+        width: 9
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0358b6cae9aa30800800000000000000
+      internalID: 577492775707837744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: triadTilesBackground_8
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 1811
+        width: 52
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0288bfc05559c640800000000000000
+      internalID: 5100701858544517646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: triadTilesBackground_9
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 1637
+        width: 47
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 770e9ba775fd56860800000000000000
+      internalID: 7522664319406432375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: triadTilesBackground_10
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 1701
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7b243485fa784ad0800000000000000
+      internalID: -2717787180214506627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: triadTilesBackground_11
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 1682
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd48e7256d39c7a90800000000000000
+      internalID: -7314809146040220452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: triadTilesBackground_12
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 1591
+        width: 51
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37296780f775fd450800000000000000
+      internalID: 6115703022106874483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: triadTilesBackground_13
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 1605
+        width: 47
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1e9e39cc7fd1a5a0800000000000000
+      internalID: -6511677859155763682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: triadTilesBackground_14
+      rect:
+        serializedVersion: 2
+        x: 837
+        y: 1669
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09ec652a5b3eabf20800000000000000
+      internalID: 3439311634702978704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: triadTilesBackground_15
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 1650
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f994e4f3c2b082a0800000000000000
+      internalID: -6737188487849272842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: triadTilesBackground_16
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 1465
+        width: 51
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69ebf40b6665f17b0800000000000000
+      internalID: -5251383641446039914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: triadTilesBackground_17
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 1390
+        width: 51
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61ac38dcfb5b81620800000000000000
+      internalID: 2745143808273664534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: triadTilesBackground_18
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 1291
+        width: 51
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77c98868304ca1630800000000000000
+      internalID: 3898643946863631479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: triadTilesBackground_19
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 1291
+        width: 52
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b20a31da731573530800000000000000
+      internalID: 3834622907298062379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: triadTilesBackground_20
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 1149
+        width: 46
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eacb342d307e0c9c0800000000000000
+      internalID: -3908870472959017810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: triadTilesBackground_21
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 1213
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbf83424a5cdca380800000000000000
+      internalID: -8958543278529867843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: triadTilesBackground_22
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 1194
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5054558555b5face0800000000000000
+      internalID: -1391793337721862907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: triadTilesBackground_23
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 1070
+        width: 51
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0d866241398d5cd0800000000000000
+      internalID: -2567745367870894834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: triadTilesBackground_24
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 1006
+        width: 51
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ccbcad2ea682be10800000000000000
+      internalID: 2211978449641061575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: triadTilesBackground_25
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 1022
+        width: 47
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce961ba0cec59e0a0800000000000000
+      internalID: -6851843189206062612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: triadTilesBackground_26
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 1086
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ec9918c44e173650800000000000000
+      internalID: 6212467491744619749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: triadTilesBackground_27
+      rect:
+        serializedVersion: 2
+        x: 873
+        y: 1066
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85e310965c378e850800000000000000
+      internalID: 6406497761641971288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: triadTilesBackground_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 881
+        width: 14
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe6c9c0d2cf854e80800000000000000
+      internalID: -8194985880041437457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: triadTilesBackground_29
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 927
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b188fa4a573f55410800000000000000
+      internalID: 1465344940378654747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: triadTilesBackground_30
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 906
+        width: 32
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 858517e5f8e17a420800000000000000
+      internalID: 2641113307589728344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: triadTilesBackground_31
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 908
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2852de98cb74e9a90800000000000000
+      internalID: -7305322670454921854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: triadTilesBackground_32
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 844
+        width: 47
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0556e2dc98c1fd60800000000000000
+      internalID: 7922333795400176906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: triadTilesBackground_33
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 908
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e62dfc397eea42c20800000000000000
+      internalID: 3180859546470961774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: triadTilesBackground_34
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 810
+        width: 51
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57d701ddd14a9d2e0800000000000000
+      internalID: -2100467303021773451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: triadTilesBackground_35
+      rect:
+        serializedVersion: 2
+        x: 565
+        y: 888
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ebd69409f09fc010800000000000000
+      internalID: 1211346223984204775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: triadTilesBackground_36
+      rect:
+        serializedVersion: 2
+        x: 1001
+        y: 863
+        width: 23
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2200ce21979c6280800000000000000
+      internalID: -9048690901483781588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: triadTilesBackground_37
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 783
+        width: 52
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 756269532dacf4040800000000000000
+      internalID: 4634145545778505303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: triadTilesBackground_38
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 563
+        width: 51
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cf4f1a479bec2b80800000000000000
+      internalID: -8418094568446144573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: triadTilesBackground_39
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 676
+        width: 51
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 086ad7ca6d851a680800000000000000
+      internalID: -8745611322336631168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: triadTilesBackground_40
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 540
+        width: 47
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38aecdf7aea162380800000000000000
+      internalID: -8996473611156133245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: triadTilesBackground_41
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 604
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b219a50e19685840800000000000000
+      internalID: 5213032146346250937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: triadTilesBackground_42
+      rect:
+        serializedVersion: 2
+        x: 769
+        y: 528
+        width: 51
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 528b577599e0e7600800000000000000
+      internalID: 467827463053228069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: triadTilesBackground_43
+      rect:
+        serializedVersion: 2
+        x: 950
+        y: 530
+        width: 52
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d5480e6221fbd960800000000000000
+      internalID: 7627955524059284951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: triadTilesBackground_44
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 585
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9dc1b3843ac8fc10800000000000000
+      internalID: 2087640754182802843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: triadTilesBackground_45
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 268
+        width: 47
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2ecbaad3f7856ed0800000000000000
+      internalID: -2421379743226278355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: triadTilesBackground_46
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 332
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 779d0c443c7732c50800000000000000
+      internalID: 6639281956230060407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: triadTilesBackground_47
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 323
+        width: 51
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7edf69f05b588030800000000000000
+      internalID: 3497145513993559677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: triadTilesBackground_48
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 313
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f77789ba1da88fa0800000000000000
+      internalID: -5798194189946095623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: triadTilesBackground_49
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 156
+        width: 51
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 755e3bfc54d788030800000000000000
+      internalID: 3497182849444078935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: triadTilesBackground_50
+      rect:
+        serializedVersion: 2
+        x: 643
+        y: 117
+        width: 47
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe7973f0635d97bc0800000000000000
+      internalID: -3784759583667939345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: triadTilesBackground_51
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 181
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14a46330abb964bf0800000000000000
+      internalID: -340413498599781823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: triadTilesBackground_52
+      rect:
+        serializedVersion: 2
+        x: 897
+        y: 175
+        width: 51
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ad302b2a5840ad30800000000000000
+      internalID: 4440628784695098789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: triadTilesBackground_53
+      rect:
+        serializedVersion: 2
+        x: 691
+        y: 161
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd2c782036ae8ad50800000000000000
+      internalID: 6748901752579801819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: triadTilesBackground_54
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 52
+        width: 39
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72f0f3a6b89f05240800000000000000
+      internalID: 4778593581818384167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: triadTilesBackground_55
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 52
+        width: 12
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d077ea1aa894763d0800000000000000
+      internalID: -3213518949338679539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      triadTilesBackground_0: 8413158710296487875
+      triadTilesBackground_1: -2912546446376637522
+      triadTilesBackground_10: -2717787180214506627
+      triadTilesBackground_11: -7314809146040220452
+      triadTilesBackground_12: 6115703022106874483
+      triadTilesBackground_13: -6511677859155763682
+      triadTilesBackground_14: 3439311634702978704
+      triadTilesBackground_15: -6737188487849272842
+      triadTilesBackground_16: -5251383641446039914
+      triadTilesBackground_17: 2745143808273664534
+      triadTilesBackground_18: 3898643946863631479
+      triadTilesBackground_19: 3834622907298062379
+      triadTilesBackground_2: -8241898239873290855
+      triadTilesBackground_20: -3908870472959017810
+      triadTilesBackground_21: -8958543278529867843
+      triadTilesBackground_22: -1391793337721862907
+      triadTilesBackground_23: -2567745367870894834
+      triadTilesBackground_24: 2211978449641061575
+      triadTilesBackground_25: -6851843189206062612
+      triadTilesBackground_26: 6212467491744619749
+      triadTilesBackground_27: 6406497761641971288
+      triadTilesBackground_28: -8194985880041437457
+      triadTilesBackground_29: 1465344940378654747
+      triadTilesBackground_3: -6424623511791867075
+      triadTilesBackground_30: 2641113307589728344
+      triadTilesBackground_31: -7305322670454921854
+      triadTilesBackground_32: 7922333795400176906
+      triadTilesBackground_33: 3180859546470961774
+      triadTilesBackground_34: -2100467303021773451
+      triadTilesBackground_35: 1211346223984204775
+      triadTilesBackground_36: -9048690901483781588
+      triadTilesBackground_37: 4634145545778505303
+      triadTilesBackground_38: -8418094568446144573
+      triadTilesBackground_39: -8745611322336631168
+      triadTilesBackground_4: -6456482816441109059
+      triadTilesBackground_40: -8996473611156133245
+      triadTilesBackground_41: 5213032146346250937
+      triadTilesBackground_42: 467827463053228069
+      triadTilesBackground_43: 7627955524059284951
+      triadTilesBackground_44: 2087640754182802843
+      triadTilesBackground_45: -2421379743226278355
+      triadTilesBackground_46: 6639281956230060407
+      triadTilesBackground_47: 3497145513993559677
+      triadTilesBackground_48: -5798194189946095623
+      triadTilesBackground_49: 3497182849444078935
+      triadTilesBackground_5: -4281436630686055403
+      triadTilesBackground_50: -3784759583667939345
+      triadTilesBackground_51: -340413498599781823
+      triadTilesBackground_52: 4440628784695098789
+      triadTilesBackground_53: 6748901752579801819
+      triadTilesBackground_54: 4778593581818384167
+      triadTilesBackground_55: -3213518949338679539
+      triadTilesBackground_6: 1540883052197525173
+      triadTilesBackground_7: 577492775707837744
+      triadTilesBackground_8: 5100701858544517646
+      triadTilesBackground_9: 7522664319406432375
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
